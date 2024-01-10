@@ -5,10 +5,15 @@ import {
   completeTodoValidation,
 } from "./typeValidation.js";
 import Todo from "./db.js";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
-
+app.use(
+  cors({
+    origin: "http://localhost:5173", //allowing only from this port not from anyone
+  })
+); //here we are allowing to localhost frontend to send request to backend, we can also allow only specific port
 app.post("/createTodo", async (req, res) => {
   const createdPayload = req.body;
   const parsedPayload = createTodoValidation.safeParse(createdPayload);

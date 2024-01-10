@@ -7,3 +7,5 @@ This is a simple todo app using React with following features
 - Anyone can mark todo as done
 
 #### to do in future is to add user authentication
+
+#### update fetch function for today and add functionality for complete Todo and also to update tailwind and try to deploy in vercel and render
